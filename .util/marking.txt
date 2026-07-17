@@ -1,19 +1,10 @@
-============================= test session starts ==============================
-platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
-rootdir: /home/runner/work/Assessment-Backend-Week-2/Assessment-Backend-Week-2/marine_experiments
-collected 73 items
-
-test_queries.py ....F....F....F....FFFFFFFFFFFFF                         [ 43%]
-test_routes.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                 [100%]
-
-======================== 57 failed, 16 passed in 9.83s =========================
 ************* Module api
-marine_experiments/api.py:3:0: W0611: Unused datetime imported from datetime (unused-import)
-marine_experiments/api.py:5:0: W0611: Unused request imported from flask (unused-import)
-marine_experiments/api.py:6:0: W0611: Unused sql imported from psycopg2 (unused-import)
+marine_experiments/api.py:50:48: E0001: Parsing failed: 'invalid syntax (api, line 50)' (syntax-error)
 ************* Module database_functions
-marine_experiments/database_functions.py:16:0: C0304: Final newline missing (missing-final-newline)
+marine_experiments/database_functions.py:19:38: W0622: Redefining built-in 'type' (redefined-builtin)
+marine_experiments/database_functions.py:24:16: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+marine_experiments/database_functions.py:36:40: W0622: Redefining built-in 'id' (redefined-builtin)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.89/10 (previous run: 7.89/10, +0.00)
+Your code has been rated at 4.29/10 (previous run: 4.29/10, +0.00)
 
