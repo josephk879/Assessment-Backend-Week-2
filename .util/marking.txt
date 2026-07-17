@@ -1,10 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/runner/work/Assessment-Backend-Week-2/Assessment-Backend-Week-2/marine_experiments
+collected 73 items
+
+test_queries.py ................................                         [ 43%]
+test_routes.py ..FF..F...........FFFF.......FF.......FFF                 [100%]
+
+======================== 12 failed, 61 passed in 10.14s ========================
 ************* Module api
-marine_experiments/api.py:50:48: E0001: Parsing failed: 'invalid syntax (api, line 50)' (syntax-error)
+marine_experiments/api.py:39:8: W0622: Redefining built-in 'type' (redefined-builtin)
+marine_experiments/api.py:35:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+marine_experiments/api.py:64:31: W0622: Redefining built-in 'id' (redefined-builtin)
+marine_experiments/api.py:64:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+marine_experiments/api.py:3:0: W0611: Unused datetime imported from datetime (unused-import)
+marine_experiments/api.py:6:0: W0611: Unused sql imported from psycopg2 (unused-import)
 ************* Module database_functions
 marine_experiments/database_functions.py:19:38: W0622: Redefining built-in 'type' (redefined-builtin)
 marine_experiments/database_functions.py:24:16: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-marine_experiments/database_functions.py:36:40: W0622: Redefining built-in 'id' (redefined-builtin)
+marine_experiments/database_functions.py:54:40: W0622: Redefining built-in 'id' (redefined-builtin)
 
 ------------------------------------------------------------------
-Your code has been rated at 4.29/10 (previous run: 4.29/10, +0.00)
+Your code has been rated at 8.50/10 (previous run: 8.50/10, +0.00)
 
