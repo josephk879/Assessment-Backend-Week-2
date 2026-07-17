@@ -22,14 +22,32 @@ def get_experiments(conn: connection, type: str | None,
 
     with conn.cursor() as cursor:
         query = f"""
-    SELECT *
+    SELECT E.experiment_date, E.experiment_id, 
+    ET.type_name AS experiment_type, E.score,
+    SP.species_name, E.subject_id
     FROM experiment AS E
     JOIN experiment_type AS ET
-    WHERE ET.type_name = %(type)s
-    AND E.score > %(score_over)s;
+        ON ET.experiment_type_id = E.experiment_type_id
+    JOIN subject as SU
+    ON SU.subject_id = E.subject_id
+    JOIN species as SP
+    ON SP.species_id = SU.species_id
+    WHERE TRUE
     """
+        params = {}
+
+        if type is not None:
+            query += " AND ET.type_name ILIKE %(type)s"
+            params["type"] = type
+
+        if score_over is not None:
+            query += " AND E.score > %(score_over)s"
+            params["score_over"] = score_over
+
+        query += ";"
+
         cursor.execute(
-            query, {"type": type, "score_over": score_over})
+            query, params)
         return cursor.fetchall()
 
 

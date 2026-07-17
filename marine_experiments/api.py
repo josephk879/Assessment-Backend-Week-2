@@ -36,18 +36,24 @@ def endpoint_get_experiment():
     """Create GET method for /experiment endpoint."""
 
     if request.method == "GET":
-        type = request.args.get("experiment_type")
-        score_over = request.args.get("specific_score")
-        type = [type] or [
-            "intelligence", "obedience", "aggression"]
-        score_over = score_over or 0
+        type = request.args.get("type")
+        score_over = request.args.get("score_over")
+        valid_types = {"intelligence", "obedience", "aggression"}
 
-        for e_type in type:
-            if e_type not in ("intelligence", "obedience", "aggression"):
-                raise ValueError("Invalid experiment type")
+        if type is not None:
+            type = type.lower()
 
-        if score_over < 0 or score_over > 100:
-            raise ValueError("Invalid score.") 400
+            if type not in valid_types:
+                return {"error": "Invalid value for 'type' parameter"}, 400
+
+        if score_over is not None:
+            try:
+                score_over = int(score_over)
+            except ValueError:
+                return {"error": "Invalid value for 'score_over' parameter"}, 400
+
+            if score_over < 0 or score_over > 100:
+                return {"error": "Invalid value for 'score_over' parameter"}, 400
 
         experiments = get_experiments(conn, type, score_over)
 
