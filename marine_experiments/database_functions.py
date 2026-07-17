@@ -63,5 +63,5 @@ def delete_experiment(conn: connection, id: int) -> dict | None:
             """,
             {"id": id},
         )
-
+        conn.commit()
         return cursor.fetchone()
