@@ -4,9 +4,9 @@ rootdir: /home/runner/work/Assessment-Backend-Week-2/Assessment-Backend-Week-2/m
 collected 73 items
 
 test_queries.py ................................                         [ 43%]
-test_routes.py ...F..F...........FFFF.......FF.......FFF                 [100%]
+test_routes.py ...F..F...........FFFF.......FF..........                 [100%]
 
-======================== 11 failed, 62 passed in 10.36s ========================
+========================= 8 failed, 65 passed in 9.95s =========================
 ************* Module api
 marine_experiments/api.py:36:8: W0622: Redefining built-in 'type' (redefined-builtin)
 marine_experiments/api.py:32:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
@@ -18,5 +18,5 @@ marine_experiments/database_functions.py:24:16: W1309: Using an f-string that do
 marine_experiments/database_functions.py:54:40: W0622: Redefining built-in 'id' (redefined-builtin)
 
 ------------------------------------------------------------------
-Your code has been rated at 8.79/10 (previous run: 8.79/10, +0.00)
+Your code has been rated at 8.81/10 (previous run: 8.81/10, +0.00)
 
