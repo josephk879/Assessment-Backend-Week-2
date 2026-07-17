@@ -1,10 +1,7 @@
+# pylint: disable=W0612
 """An API for handling marine experiments."""
 
-from datetime import datetime
-
 from flask import Flask, jsonify, request
-from psycopg2 import sql
-
 from database_functions import get_db_connection, get_experiments, delete_experiment
 
 

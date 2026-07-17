@@ -24,7 +24,7 @@ def get_experiments(conn: connection, type: str | None,
         query = f"""
     SELECT E.experiment_date, E.experiment_id, 
     ET.type_name AS experiment_type, E.score,
-    SP.species_name, E.subject_id
+    SP.species_name AS species, E.subject_id
     FROM experiment AS E
     JOIN experiment_type AS ET
         ON ET.experiment_type_id = E.experiment_type_id
@@ -41,7 +41,7 @@ def get_experiments(conn: connection, type: str | None,
             params["type"] = type
 
         if score_over is not None:
-            query += " AND E.score > %(score_over)s"
+            query += " AND E.score >= %(score_over)s"
             params["score_over"] = score_over
 
         query += ";"
